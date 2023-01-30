@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Online BaseHangul Encoder And Decoder</title>
-<meta charset="utf-8" />
-<link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Online BaseHangul Encoder And Decoder</title>
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sugina-dev/cdn@20200716/pandoc.css">
 <script>
 // https://github.com/basehangul/basehangul-javascript/blob/master/basehangul.js
 
@@ -130,21 +131,16 @@ function handleConvert() {
 }
 </script>
 <style>
-html {
-text-align: center;
-background-color: #eee;
-margin: 0 1em;
-}
-
-body {
-font-family: sans-serif, sans-serif;
-}
-
 textarea {
-  min-height: 6em;
-  width: 100%;
+  line-height: inherit;
+  min-height: 8em;
+  min-width: 100%;
   resize: vertical;
   max-width: 800px;
+}
+
+.pure-button {
+  padding: 0.2em 1em;
 }
 
 .pure-form {
@@ -156,7 +152,7 @@ textarea {
 }
 
 output {
-  display: inline-block;
+  display: block;
   max-width: 800px;
   text-align: left;
   overflow-wrap: break-word;
@@ -166,13 +162,27 @@ output {
 <body>
   <h1>Online BaseHangul Encoder And Decoder</h1>
   <form class="pure-form" onsubmit="handleConvert(); return false">
-    <p><textarea class="pure-input-rounded" id="inputarea"></textarea></p>
     <p>
-      <label class="pure-radio"><input type="radio" name="encodeordecode" value="encode" checked="checked" /> Encode</label>
-      <label class="pure-radio"><input type="radio" name="encodeordecode" value="decode" /> Decode</label>
+      <textarea id="inputarea"></textarea>
     </p>
-    <p><input class="pure-button" type="submit" value="Start" /></p>
-    <p class="outputwrapper"><output id="outputarea"></output></p>
+    <p>
+      <label class="pure-radio"><input type="radio" name="encodeordecode" value="encode" checked="checked"> Encode</label>&nbsp;
+      <label class="pure-radio"><input type="radio" name="encodeordecode" value="decode"> Decode</label>&nbsp;
+      <input class="pure-button" type="submit" value="Start">
+    </p>
+    <output id="outputarea"></output>
   </form>
+
+  <h2>What is Hangul?</h2>
+  <p>Hangul is the Korean writing system that consists of syllabic characters representing the sounds of the Korean language. It was created in the 15th century and is now the official script of Korea. Hangul is composed of individual characters called "jamo" that represent syllables and can be combined to form complex words.</p>
+  <h2>What is BaseHangul?</h2>
+  <p>Similar to Base64, BaseHangul is a binary encoding that uses Hangul (Korean writing system) characters to represent binary data. It converts 5 bytes (40 bits) into 4 Hangul characters based on the KS C 5601 standard. The 40-bit conversion is chosen because it is the least common multiple of 8 and 10, which are the number of bits used to represent 1 character. 1028 Hangul characters out of 2350 in the standard are selected in dictionary order for the encoding. The character "흐" is outside of the selected range but used as a padding character.</p>
+  <h2>What is the Online BaseHangul Encoder and Decoder?</h2>
+  <p>Online BaseHangul Encoder and Decoder is a cutting-edge tool designed for quick and efficient encoding and decoding of BaseHangul data. With its fast and reliable implementation in JavaScript, this tool provides a seamless user experience right in your web browser. The computation is done locally, ensuring that your information is kept secure and confidential at all times, as it does not transmit any data to any third-party servers. With just one click, you can easily convert text data into Hangul characters and vice versa, saving you time and effort. Whether you're a professional or simply looking for a convenient way to encode and decode BaseHangul data, this online tool is the perfect solution.</p>
+  <h2>More information</h2>
+  <p>The Online BaseHangul Encoder and Decoder is built upon the <a href="https://github.com/basehangul/basehangul-javascript">basehangul-javascript</a> project, which is a JavaScript implementation of the BaseHangul 1.1 encoding standard. The project provides a reliable and efficient platform for encoding and decoding binary data into Hangul characters.</p>
+  <p>For more information on BaseHangul, we encourage you to visit the <a href="https://basehangul.github.io/">official website</a>. Here, you will find detailed information about the encoding standard, including its history, development, and implementation. Additionally, the site provides a wealth of resources and information about how to use BaseHangul, including tutorials, examples, and APIs. Whether you're a developer, researcher, or simply interested in learning more about BaseHangul, the official website is an excellent resource that provides all the information you need to get started.</p>
+  <h2>Your voice matters!</h2>
+  <p>If you encounter any issues or have suggestions for improvements to the Online BaseHangul Encoder and Decoder tool, you can visit the source code on <a href="https://github.com/ayaka14732/basehangul-online">GitHub</a>. This repository is maintained by the tool's developers and provides a platform for users to report issues, suggest improvements, and contribute to the project. Whether you're a developer or just a user, you can help make the Online BaseHangul Encoder and Decoder tool even better.</p>
 </body>
 </html>
